@@ -1,4 +1,9 @@
 package net.phooby.repository;
 
-public class CustomNasdaqRepository {
+import net.phooby.models.Nasdaq;
+
+import java.util.List;
+
+public interface CustomNasdaqRepository {
+    public List<Nasdaq> findInDateRange(String start, String end);
 }

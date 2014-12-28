@@ -1,4 +1,8 @@
 package net.phooby.mappers;
 
-public class CustomTypeMapper {
+import org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper;
+
+public class CustomTypeMapper extends DefaultMongoTypeMapper {
+
+
 }
