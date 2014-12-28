@@ -3,9 +3,12 @@
 
   angular.module('app').controller('Index', Index);
 
-  function Index() {
+  Index.$inject = ['stocks'];
+
+  function Index(stocks) {
     var vm = this;
 
     vm.message = "Hello, Index!";
+    vm.stocks = stocks;
   }
 }());
