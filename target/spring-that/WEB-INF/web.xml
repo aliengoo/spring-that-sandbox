@@ -5,6 +5,16 @@
 
 	<display-name>Spring MVC Application</display-name>
 
+	<filter>
+		<filter-name>SimpleCorsFilter</filter-name>
+		<filter-class>net.phooby.filters.SimpleCORSFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>SimpleCorsFilter</filter-name>
+		<servlet-name>mvc-dispatcher</servlet-name>
+	</filter-mapping>
+
     <servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>

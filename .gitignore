@@ -14,3 +14,11 @@
 hs_err_pid*
 
 
+
+
+
+src/main/webapp/assets/fonts
+src/main/webapp/assets/styles
+src/main/webapp/assets/js
+node_modules
+bower
