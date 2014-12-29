@@ -36,4 +36,8 @@
 
   <bean name="testController" class="net.phooby.mvc.TestController">
   </bean>
+  <!-- Filters are not automatically beans, so you have to use the DelegatingFilterProxy (See web.xml)-->
+  <bean name="corsFilter" class="net.phooby.filters.SimpleCORSFilter">
+    <property name="corsOrigin" value="*"/>
+  </bean>
 </beans>
