@@ -5,15 +5,29 @@
 
 	<display-name>Spring MVC Application</display-name>
 
+	<!-- The bean is specified in the servlet configuratio file -->
 	<filter>
-		<filter-name>SimpleCorsFilter</filter-name>
-		<filter-class>net.phooby.filters.SimpleCORSFilter</filter-class>
-	</filter>
+    <filter-name>corsFilter</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  </filter>
 
 	<filter-mapping>
-		<filter-name>SimpleCorsFilter</filter-name>
+		<filter-name>corsFilter</filter-name>
 		<servlet-name>mvc-dispatcher</servlet-name>
 	</filter-mapping>
+	
+	<!-- required for DelegatingFilterProxy to work -->
+	<context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
+  </context-param>
+
+<!-- required for DelegatingFilterProxy to work -->
+  <listener>
+    <listener-class>
+      org.springframework.web.context.ContextLoaderListener
+    </listener-class>
+  </listener>
 
     <servlet>
 		<servlet-name>mvc-dispatcher</servlet-name>
